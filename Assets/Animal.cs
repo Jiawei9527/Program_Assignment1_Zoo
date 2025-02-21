@@ -21,4 +21,5 @@ public abstract class Animal: MonoBehaviour
     }
     //common abstract behaviour to make sound
     public abstract void MakeSound();
+
 }
