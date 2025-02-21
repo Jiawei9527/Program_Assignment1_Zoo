@@ -6,7 +6,6 @@ public class Penguin : Animal
     //penguin unique attributes
     public float shakeAngle = 30f;
     public float shakeSpeed = 1f;
-    float timmer = 0f;
     Quaternion originalRotation;
 
     void Start()
@@ -22,13 +21,16 @@ public class Penguin : Animal
         if (Input.GetKey(KeyCode.Q))
         {
             ShakeWalk();
-            MakeSound();
         }
         else
         {
             // Reset rotation when the key is not pressed
             transform.rotation = originalRotation;
 
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            MakeSound();
         }
     }
     private void ShakeWalk()
@@ -39,6 +41,6 @@ public class Penguin : Animal
 
     public override void MakeSound()
         {
-            Console.WriteLine("Honk!");
+            Debug.Log("Penguin says: Honk!");
         }
 }
