@@ -4,19 +4,27 @@ using UnityEngine;
 public abstract class Animal: MonoBehaviour
 {
     //common attributes
-    public string Name;
-    public TextMeshProUGUI nameText;
+    public GameObject animalsprite;
+    public GameObject NameBox;
+    public GameObject prompt;
     //common "behaviour" show their name on ui
     public void ShowName()
     {
-        if (nameText != null)
+        if (NameBox != null)
         {
-            nameText.text = Name;
+            NameBox.SetActive(true);
 
         }
         else
         {
             Debug.LogError(name);
+        }
+    }
+    public void HideName()
+    {
+        if (NameBox != null)
+        {
+            NameBox.SetActive(false);
         }
     }
     //common abstract behaviour to make sound
